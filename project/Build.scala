@@ -3,7 +3,7 @@ import sbt.Keys._
 
 object ProjectBuild extends Build {
 
-  lazy val buildVersion =  "0.6.0"
+  lazy val buildVersion =  "0.6.1"
 
   lazy val root = Project(id = "specs2-embedmongo", base = file("."), settings = Project.defaultSettings).settings(
     organization := "com.github.athieriot",
@@ -18,7 +18,7 @@ object ProjectBuild extends Build {
     resolvers += "Sonatype releases" at "https://oss.sonatype.org/content/repositories/releases/",
 
     libraryDependencies <++= scalaVersion(sv => Seq(
-      "de.flapdoodle.embed" % "de.flapdoodle.embed.mongo" % "1.40",
+      "de.flapdoodle.embed" % "de.flapdoodle.embed.mongo" % "1.44",
       "org.specs2"  %% "specs2" % specs2Version(sv),
       "org.mongodb" %% "casbah-core" % "2.6.4" % "provided",
       "com.novus" %% "salat-core" % "1.9.4" % "test",
